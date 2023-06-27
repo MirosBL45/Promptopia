@@ -88,6 +88,38 @@ function Nav() {
                 setToggleDropdown((prev) => !prev);
               }}
             />
+            {toggleDropdown && (
+              <div className="dropdown">
+                <Link
+                  className="dropdown_link"
+                  href="/profile"
+                  onClick={() => {
+                    setToggleDropdown(false);
+                  }}
+                >
+                  My profile
+                </Link>
+                <Link
+                  className="dropdown_link"
+                  href="/create-prompt"
+                  onClick={() => {
+                    setToggleDropdown(false);
+                  }}
+                >
+                  Create Prompt
+                </Link>
+                <button
+                  type="button"
+                  className="mt-5 w-full black_btn"
+                  onClick={() => {
+                    setToggleDropdown(false);
+                    signOut();
+                  }}
+                >
+                  Sign Out
+                </button>
+              </div>
+            )}
           </div>
         ) : (
           <>
