@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 function Form({ type, post, setPost, submitting, handleSubmit }) {
   return (
@@ -9,7 +9,10 @@ function Form({ type, post, setPost, submitting, handleSubmit }) {
         imagination run with any AI-powered platform
       </p>
 
-      <form className="glassmorphism mt-10 w-full max-w-2xl flex flex-col gap-7">
+      <form
+        onSubmit={handleSubmit}
+        className="glassmorphism mt-10 w-full max-w-2xl flex flex-col gap-7"
+      >
         <label>
           <span className="text-gray-700 text-base font-semibold font-satoshi">
             Your AI Prompt
@@ -28,7 +31,7 @@ function Form({ type, post, setPost, submitting, handleSubmit }) {
 
         <label>
           <span className="text-gray-700 text-base font-semibold font-satoshi">
-            Tag{" "}
+            Tag{' '}
             <span className="font-normal">
               (#product, #webdevelopment, #idea)
             </span>
