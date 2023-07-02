@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 function PromptCard({ post, handleEdit, handleDelete, handleTagClick }) {
   const { data: session } = useSession();
@@ -70,25 +70,25 @@ function PromptCard({ post, handleEdit, handleDelete, handleTagClick }) {
         className="font-inter text-sm blue_gradient cursor-pointer"
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
-        #{post.tag}
+        {post.tag}
       </p>
 
-      {/* {session?.user.id === post.creator._id && pathName === "/profile" && (
-        <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
+      {session?.user.id === post.creator._id && pathName === '/profile' && (
+        <div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
           <p
-            className='font-inter text-sm green_gradient cursor-pointer'
+            className="font-inter text-sm green_gradient cursor-pointer"
             onClick={handleEdit}
           >
             Edit
           </p>
           <p
-            className='font-inter text-sm orange_gradient cursor-pointer'
+            className="font-inter text-sm orange_gradient cursor-pointer"
             onClick={handleDelete}
           >
             Delete
           </p>
         </div>
-      )} */}
+      )}
     </div>
   );
 }
