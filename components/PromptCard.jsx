@@ -23,7 +23,7 @@ function PromptCard({ post, handleEdit, handleDelete, handleTagClick }) {
   function handleCopy() {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
-    setTimeout(() => setCopied(false), 3000);
+    setTimeout(() => setCopied(false), 550);
   }
 
   return (
